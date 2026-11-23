@@ -1,0 +1,71 @@
+Pocket Drop - Google Drive setup (about 15 minutes, once)
+=========================================================
+
+You need two things: a free Google API key, and a Drive folder shared by link.
+Only put files there that you have the right to use (for example copies you
+made from your own cartridges).
+
+
+PART 1 - Create your API key (on your PC)
+------------------------------------------
+1. Go to https://console.cloud.google.com and sign in with your Google account.
+   Accept the terms if asked. You do NOT need to add a payment card.
+
+2. Create a project:
+   Click the project picker at the top (it may say "Select a project")
+   -> NEW PROJECT -> Name: Pocket Drop -> CREATE.
+   Wait a few seconds, then make sure "Pocket Drop" is selected at the top.
+
+3. Turn on the Google Drive API:
+   Menu (three lines, top left) -> APIs & Services -> Library
+   -> search "Google Drive API" -> click it -> ENABLE.
+
+4. Create the key:
+   APIs & Services -> Credentials -> + CREATE CREDENTIALS -> API key.
+   A key starting with "AIza..." appears. Click the copy icon.
+
+5. (Recommended) Lock the key to Drive only:
+   On the Credentials page click the key's name ->
+   "API restrictions" -> Restrict key -> tick "Google Drive API" -> SAVE.
+   (Leave "Application restrictions" on None.)
+
+6. Keep the key handy - Pocket Drop asks for it the first time you open
+   a console (or set it in Settings -> Google API key).
+
+
+PART 2 - Share one Drive folder per console
+--------------------------------------------
+1. Open https://drive.google.com and make a folder for each console you
+   want, e.g. "GBA", "SNES". Upload your files into them.
+2. Right-click a folder -> Share -> Share.
+   Under "General access" choose "Anyone with the link", role "Viewer"
+   (Cualquier usuario que tenga el enlace -> Lector). Click "Copy link".
+   Keep these links private - anyone who has one can see that folder.
+
+
+PART 3 - Put the key and links in drive_links.ini
+--------------------------------------------------
+1. Open PocketDrop\drive_links.ini on your PC (Notepad++ or Notepad).
+2. After  api_key =  paste your key:
+       api_key = AIzaSy...
+3. After each console you use, paste its folder link:
+       GBA = https://drive.google.com/drive/folders/1AbC...?usp=sharing
+       SNES = https://drive.google.com/drive/folders/1XyZ...?usp=sharing
+   Leave the others empty.
+4. Save (in Notepad: "Save as type: All files", name drive_links.ini).
+5. Optional: test on your PC - drag the PocketDrop folder onto love.exe.
+6. Copy the PocketDrop folder to the console (MUOS/application/).
+
+(You can also link a console from the app itself: highlight it and press X.)
+
+
+If something goes wrong (the app tells you on screen)
+------------------------------------------------------
+"API key is wrong"         -> re-enter it in Settings -> Google API key.
+"refused the request (403)"-> the Google Drive API isn't ENABLED (Part 1, step 3),
+                              or the key is restricted to a different API.
+"download limit reached"   -> Google pauses a file after many downloads in a
+                              short time. Wait (usually under 24 hours).
+"Google can't see this folder" -> share it as "Anyone with the link" (Viewer).
+Google Docs/Sheets files   -> they are skipped; upload real files instead.
+Your key is hidden in log.txt, so the log is safe to share for help.

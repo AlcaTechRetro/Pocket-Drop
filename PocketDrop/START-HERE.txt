@@ -1,0 +1,44 @@
+Pocket Drop 1.0 (Setup version) - START HERE
+=============================================
+
+This version comes empty. You connect it to your own Google Drive once
+(about 15 minutes), then every download is one button press.
+
+STEP 1 - Get a free Google API key and share your folders (on your PC)
+ Follow GOOGLE-DRIVE-SETUP.txt, Parts 1 and 2. In short:
+  - console.cloud.google.com -> new project "Pocket Drop"
+  - APIs & Services -> Library -> "Google Drive API" -> ENABLE
+  - Credentials -> CREATE CREDENTIALS -> API key -> copy it (starts AIza)
+  - In Google Drive make one folder per console (GBA, SNES...), upload your
+    games, right-click -> Share -> "Anyone with the link" (Viewer) -> Copy link
+
+STEP 2 - Fill in drive_links.ini (on your PC, Notepad)
+    api_key = AIzaSy...your key...
+    GBA = https://drive.google.com/drive/folders/....?usp=sharing
+ Leave consoles you don't use empty. Save.
+ (You can also do this on the console: open any console and the app walks
+  you through it on screen - but typing a long key with the D-pad is slow.)
+
+STEP 3 - Install (once)
+ 1. Switch the console off. Put SD card 1 (TF1) in your PC's card reader.
+ 2. Copy the whole PocketDrop folder into  MUOS/application/
+    You should end up with  MUOS/application/PocketDrop/mux_launch.sh
+ 3. Put the card back, switch on, connect to Wi-Fi.
+ 4. Open Applications -> Pocket Drop.
+
+STEP 4 - Download a game (every time)
+ 1. Pick a console with the D-pad and press A.
+ 2. Pick a game and press A. It downloads, checks itself and lands in
+    ROMS/<console> (unzipped if it was a zip).
+ 3. B goes back. Start + Select quits.
+
+BUTTONS
+ A open/download   B back   X link/change   Y refresh   L1/R1 page
+ Start + Select quit
+
+GOOD HABITS
+ - Quit with Start + Select, never by holding the power button.
+ - Keep the lid open while downloading.
+ - If something goes wrong, send log.txt from this folder (key is hidden).
+
+The full guide is README.txt. Only use files you have the right to use.
