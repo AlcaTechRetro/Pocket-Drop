@@ -1,0 +1,11 @@
+name: Feature request
+description: Suggest an idea for Pocket Drop
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What would you like Pocket Drop to do, and why?
+    validations:
+      required: true

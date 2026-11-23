@@ -1,0 +1,30 @@
+name: Bug report
+description: Something isn't working
+labels: [bug]
+body:
+  - type: input
+    id: device
+    attributes:
+      label: Handheld and muOS version
+      placeholder: Anbernic RG35XX SP, muOS 2601.1
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Attach or paste log.txt and log-previous.txt from MUOS/application/PocketDrop/. Your API key is hidden in them. Never paste drive_links.ini.
+  - type: checkboxes
+    id: legal
+    attributes:
+      label: Confirmation
+      options:
+        - label: I only use Pocket Drop with files I have the right to use.
+          required: true
