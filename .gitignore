@@ -1,0 +1,12 @@
+# Files Pocket Drop writes while it runs - never upload these
+PocketDrop/tmp/
+PocketDrop/log.txt
+PocketDrop/log-previous.txt
+PocketDrop/launch.txt
+PocketDrop/history.txt
+PocketDrop/settings.txt
+PocketDrop/TEST_ROMS/
+# Games
+*.gba
+*.zip
+*.7z
